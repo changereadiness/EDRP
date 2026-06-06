@@ -1,182 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Change Readiness Checkpoint — Private</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EDRP | Enterprise Distribution & Resource Partners</title>
 
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #fff;
-      color: #111;
-      margin: 0;
-    }
+<style>
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#222;
+    line-height:1.6;
+}
 
-    .container {
-      max-width: 720px;
-      margin: 80px auto;
-      padding: 0 24px;
-    }
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+}
 
-    h1, h2 { font-weight: 500; }
+header{
+    background:#111;
+    color:white;
+    padding:20px 0;
+}
 
-    p { line-height: 1.6; margin-bottom: 28px; }
+header h1{
+    margin:0;
+    font-size:28px;
+}
 
-    .item {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      padding: 20px;
-      border: 1px solid #e5e5e5;
-      margin-bottom: 16px;
-    }
+nav{
+    margin-top:10px;
+}
 
-    .item input {
-      margin-top: 4px;
-      transform: scale(1.2);
-    }
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-right:20px;
+}
 
-    button {
-      padding: 14px 22px;
-      font-size: 15px;
-      border: 1px solid #111;
-      background: #111;
-      color: #fff;
-      cursor: pointer;
-    }
+.hero{
+    background:#f5f5f5;
+    padding:80px 0;
+}
 
-    button.secondary {
-      background: #fff;
-      color: #111;
-      margin-left: 12px;
-    }
+.hero h2{
+    font-size:42px;
+    margin-bottom:20px;
+}
 
-    button:disabled {
-      opacity: 0.4;
-      cursor: not-allowed;
-    }
+.hero p{
+    font-size:20px;
+    max-width:800px;
+}
 
-    .center { text-align: center; margin: 48px 0; }
+.section{
+    padding:70px 0;
+}
 
-    .hidden { display: none; }
+.section h3{
+    font-size:32px;
+    margin-bottom:20px;
+}
 
-    .signal {
-      padding: 28px;
-      border-radius: 6px;
-      white-space: pre-line;
-    }
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
 
-    .high { background: #fbeaea; color: #8a1f1f; }
-    .moderate { background: #fff4e5; color: #8a5a1f; }
-    .low { background: #eef6ee; color: #1f6b2e; }
+.card{
+    border:1px solid #ddd;
+    padding:25px;
+}
 
-    .quiet {
-      font-size: 13px;
-      color: #666;
-      margin-top: 48px;
-    }
+.card h4{
+    margin-top:0;
+}
 
-    input[type="password"] {
-      width: 100%;
-      padding: 14px;
-      margin-bottom: 16px;
-      font-size: 15px;
-    }
+.dark{
+    background:#111;
+    color:white;
+}
 
-    a { color: #111; text-decoration: underline; }
-  </style>
+ul{
+    padding-left:20px;
+}
+
+footer{
+    padding:40px 0;
+    text-align:center;
+    background:#f5f5f5;
+}
+
+.tagline{
+    font-size:22px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+@media(max-width:768px){
+.hero h2{
+    font-size:32px;
+}
+}
+</style>
 </head>
 
 <body>
 
-<!-- ACCESS -->
-<div id="access" class="container">
-  <h2>Private Access</h2>
-  <input type="password" id="code" placeholder="One-time access code" />
-  <button onclick="enter()">Continue</button>
-  <p id="err" class="quiet hidden">Invalid or used access code.</p>
+<header>
+<div class="container">
+<h1>EDRP</h1>
+<p>Enterprise Distribution & Resource Partners</p>
+
+<nav>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#industries">Industries</a>
+<a href="#partners">Partners</a>
+<a href="#contact">Contact</a>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+<h2>Connecting Industrial Assets with Enterprise Demand</h2>
+
+<p>
+EDRP is an industrial brokerage and distribution platform focused on power generation systems,
+heavy equipment, industrial motors, and infrastructure assets across Canada and the Americas.
+</p>
+
+<p class="tagline">
+Industrial Brokerage • Market Intelligence • Cross-Border Distribution
+</p>
+
+</div>
+</section>
+
+<section id="about" class="section">
+<div class="container">
+
+<h3>About EDRP</h3>
+
+<p>
+Enterprise Distribution & Resource Partners (EDRP) operates as an independent intermediary
+between industrial supply and operational demand.
+</p>
+
+<p>
+We work with equipment owners, dealers, resellers, rental operators, service providers,
+and industrial end users to facilitate the movement of critical infrastructure assets
+across North and South America.
+</p>
+
+</div>
+</section>
+
+<section id="services" class="section">
+<div class="container">
+
+<h3>What We Do</h3>
+
+<div class="grid">
+
+<div class="card">
+<h4>Asset Brokerage</h4>
+<p>
+Representation and sourcing of generators, engines,
+industrial motors, and heavy equipment.
+</p>
 </div>
 
-<!-- CHECKPOINT -->
-<div id="checkpoint" class="container hidden">
-
-  <h1>Change Readiness Checkpoint</h1>
-  <p>Select the statements that reflect reality today.</p>
-
-  <div class="item"><input type="checkbox" />Strategic intent is clearly understood by leadership.</div>
-  <div class="item"><input type="checkbox" />Decision authority is unambiguous.</div>
-  <div class="item"><input type="checkbox" />Comparable change has been absorbed before.</div>
-  <div class="item"><input type="checkbox" />Stakeholders align on outcomes.</div>
-  <div class="item"><input type="checkbox" />Resistance is visible and acknowledged.</div>
-  <div class="item"><input type="checkbox" />Leaders model the change.</div>
-  <div class="item"><input type="checkbox" />Communication channels are trusted.</div>
-  <div class="item"><input type="checkbox" />Capacity constraints are realistic.</div>
-  <div class="item"><input type="checkbox" />Cost of inaction is understood.</div>
-  <div class="item"><input type="checkbox" />Ownership exists beyond executives.</div>
-
-  <div class="center">
-    <button id="reveal" onclick="reveal()">Reveal checkpoint</button>
-  </div>
-
-  <div id="result" class="hidden">
-    <div id="signal" class="signal"></div>
-
-    <p>
-      To discuss this signal, connect on LinkedIn:<br />
-      <a href="https://linkedin.com/in/sayudi" target="_blank">linkedin.com/in/sayudi</a>
-    </p>
-
-    <div class="center">
-      <button class="secondary" onclick="reset()">Restart</button>
-    </div>
-  </div>
-
-  <p class="quiet">Private diagnostic. Not a survey.</p>
+<div class="card">
+<h4>Market Intelligence</h4>
+<p>
+Monitoring surplus inventory, industrial demand,
+pricing trends, and equipment availability.
+</p>
 </div>
 
-<script>
-  const CODES = ["MRLD-001", "MRLD-002", "MRLD-003"];
-  const USED = "used_codes";
+<div class="card">
+<h4>Distribution Support</h4>
+<p>
+Buyer identification, documentation coordination,
+and transaction facilitation.
+</p>
+</div>
 
-  function enter() {
-    const code = document.getElementById("code").value.trim();
-    const used = JSON.parse(localStorage.getItem(USED) || "[]");
+<div class="card">
+<h4>Cross-Border Transactions</h4>
+<p>
+Supporting asset movement throughout Canada,
+the United States, Latin America, and the Caribbean.
+</p>
+</div>
 
-    if (CODES.includes(code) && !used.includes(code)) {
-      used.push(code);
-      localStorage.setItem(USED, JSON.stringify(used));
-      document.getElementById("access").classList.add("hidden");
-      document.getElementById("checkpoint").classList.remove("hidden");
-    } else {
-      document.getElementById("err").classList.remove("hidden");
-    }
-  }
+</div>
 
-  function reveal() {
-    const count = document.querySelectorAll('input[type="checkbox"]:checked').length;
-    const box = document.getElementById("signal");
+</div>
+</section>
 
-    if (count <= 5) {
-      box.className = "signal high";
-      box.innerText = "⚠️ High risk\n\nFoundational conditions are missing.";
-    } else if (count <= 9) {
-      box.className = "signal moderate";
-      box.innerText = "◼︎ Moderate risk\n\nThis is where initiatives derail.";
-    } else {
-      box.className = "signal low";
-      box.innerText = "✓ Looking good\n\nRisk now hides in second-order variables.";
-    }
+<section id="industries" class="section">
+<div class="container">
 
-    document.getElementById("result").classList.remove("hidden");
-    document.getElementById("result").scrollIntoView({ behavior: "smooth" });
-  }
+<h3>Industries Served</h3>
 
-  function reset() {
-    document.querySelectorAll('input[type="checkbox"]').forEach(c => c.checked = false);
-    document.getElementById("result").classList.add("hidden");
-  }
-</script>
+<div class="grid">
+
+<div class="card">
+<h4>Power Generation</h4>
+<p>Diesel, gas, standby, and prime power systems.</p>
+</div>
+
+<div class="card">
+<h4>Mining & Resources</h4>
+<p>Remote operations and infrastructure support.</p>
+</div>
+
+<div class="card">
+<h4>Industrial Manufacturing</h4>
+<p>Production facilities and process industries.</p>
+</div>
+
+<div class="card">
+<h4>Marine & Offshore</h4>
+<p>Marine engines and auxiliary power systems.</p>
+</div>
+
+<div class="card">
+<h4>Infrastructure & Utilities</h4>
+<p>Municipal, institutional, and utility projects.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="partners" class="section dark">
+<div class="container">
+
+<h3>Partnership Approach</h3>
+
+<p>
+EDRP is not a competing dealer.
+</p>
+
+<p>
+We work alongside equipment dealers, resellers, rental fleets,
+service providers, and industrial operators to expand transaction
+opportunities and improve asset visibility across markets.
+</p>
+
+<p>
+Our role is to identify opportunities, connect qualified parties,
+and support successful transactions.
+</p>
+
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+
+<h3>Current Areas of Interest</h3>
+
+<ul>
+<li>Generator and engine resellers</li>
+<li>Industrial motor specialists</li>
+<li>Equipment traders and brokers</li>
+<li>Rental fleet operators</li>
+<li>Mining and industrial contractors</li>
+<li>Marine and offshore operators</li>
+<li>Industrial service providers</li>
+<li>Surplus asset owners</li>
+</ul>
+
+</div>
+</section>
+
+<section id="contact" class="section">
+<div class="container">
+
+<h3>Contact</h3>
+
+<p>
+EDRP<br>
+Enterprise Distribution & Resource Partners
+</p>
+
+<p>
+Canada | Americas
+</p>
+
+<p>
+Email: info@edrp.ca
+</p>
+
+<p>
+Website: www.edrp.ca
+</p>
+
+</div>
+</section>
+
+<footer>
+<div class="container">
+© 2026 EDRP | Enterprise Distribution & Resource Partners
+</div>
+</footer>
 
 </body>
 </html>
